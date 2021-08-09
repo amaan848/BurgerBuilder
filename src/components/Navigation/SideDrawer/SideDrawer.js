@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../../Logo/Logo';
-import NavigationItem from '../NavigationItems/NavigationItem/NavigationItem';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
@@ -17,9 +16,8 @@ const sideDrawer = (props) => {
             <div className={attachedClasses.join(' ')}>
                 <Logo height="10%"/>
                 <nav>
-                    <NavigationItems/>
+                    <NavigationItems isAuthenticated={props.isAuth}/>
                 </nav>
-
             </div>
         </Aux>
     );

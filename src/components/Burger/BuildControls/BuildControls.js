@@ -8,6 +8,8 @@ const controls = [
     {label: 'Cheese' , type: 'cheese'},
     {label: 'Meat' , type: 'meat'},
 ];
+
+
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
         <div className={classes.Price}>Current Price : <strong>{props.price.toFixed(2)}$</strong></div>
@@ -21,7 +23,13 @@ const buildControls = (props) => (
                 disabled = {props.disabled[ctrl.type]}/>;
             })
         }
-        <button className={classes.OrderButton}  disabled={!props.purchasibility} onClick={props.ordered}>ORDER NOW</button>
+
+        <button 
+            className={classes.OrderButton}  
+            disabled={!props.purchasibility} 
+            onClick={props.ordered}>
+                {props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
+        </button>
     </div>
 );
 
