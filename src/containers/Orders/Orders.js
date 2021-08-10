@@ -14,13 +14,13 @@ class Orders extends Component{
         {
             orders = (
                  this.props.orders.map(order => {
-                     return <Order 
-                            ingredients={order.ingredients} 
-                            price={order.price}  
-                            key={order.id}/> 
+                     return <Order
+                            ingredients={order.ingredients}
+                            price={order.price}
+                            key={order.id}/>
             }));
         }
-        
+
         return(
             <div>
                 {orders}
@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFetchOrders : (token,userId) => dispatch(actions.fetchOrders(token,userId))
-    }; 
+    };
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(Orders);

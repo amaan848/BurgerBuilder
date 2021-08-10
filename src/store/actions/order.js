@@ -18,7 +18,7 @@ export const purchaseBurgerFail = (error) => {
 
 export const purchaseBurgerStart = () => {
     return {
-        type: actionTypes.PURCHASE_BURGER_START 
+        type: actionTypes.PURCHASE_BURGER_START
     };
 };
 
@@ -46,14 +46,14 @@ export const fetchOrdersSuccess = (orders) =>{
         type: actionTypes.FETCH_ORDERS_SUCCESS,
         orders: orders
     };
-}; 
+};
 
 export const fetchOrdersFail = (error) =>{
     return{
         type: actionTypes.FETCH_ORDERS_FAIL,
         error: error
     };
-}; 
+};
 
 export const fetchOrdersStart = () => {
     return {
@@ -75,6 +75,6 @@ export const fetchOrders = (token , userId) => {
             dispatch(fetchOrdersSuccess(fetchedData));
         })
         .catch(err => {
-           dispatch(fetchOrdersFail(err));    
+           dispatch(fetchOrdersFail(err));
         })
 }};

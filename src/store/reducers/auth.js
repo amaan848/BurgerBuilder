@@ -1,5 +1,5 @@
 import * as actionTypes from '../../store/actions/actionTypes';
-import {updateObject} from '../utility';
+import {updateObject} from '../../shared/utility';
 
 const initialState = {
     token: null,
@@ -16,7 +16,7 @@ const authStart = (state,action) => {
 const authSuccess = (state,action) => {
     return updateObject(state , {
         token: action.idToken,
-        userId: action.userId, 
+        userId: action.userId,
         error: null,
         loading: false
     });
@@ -24,7 +24,7 @@ const authSuccess = (state,action) => {
 
 const authFail = (state,action) => {
     return updateObject(state , {
-        error: action.error, 
+        error: action.error,
         loading: false
     });
 };
@@ -44,7 +44,7 @@ const reducer = (state=initialState , action) => {
         case actionTypes.AUTH_FAIL: return authFail(state,action);
         case actionTypes.AUTH_LOGOUT: return authLogout(state,action);
         case actionTypes.SET_AUTH_REDIRECT_PATH: return setAuthRedirectPath(state,action);
-    
+
         default: return state;
     }
 };
